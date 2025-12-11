@@ -1,4 +1,4 @@
-# Matrix HTTP Error Pages für Nginx Proxy Manager
+# Matrix like HTTP Error Pages für Nginx Proxy Manager
 
 Dieses Projekt enthält ein Set von Matrix-inspirierten HTML-Fehlerseiten
 (401, 403, 404, 500, 501, 502, 503, 504) mit:
