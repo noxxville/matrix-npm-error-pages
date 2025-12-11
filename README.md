@@ -7,7 +7,7 @@ Dieses Projekt enthält ein Set von Matrix-inspirierten HTML-Fehlerseiten
 - Dark-/Light-Mode mit iOS-ähnlichem Switch (⏾ / ☀)
 - einheitlichem Blue-Matrix-Farbschema (#0080FF)
 
-Die Seiten sind dafür gedacht, in **Nginx Proxy Manager (NPM)** als
+Die Seiten sind dafür gedacht, zum Beispiel im **Nginx Proxy Manager (NPM)** als
 globale Error Pages verwendet zu werden.
 
 ## Struktur
@@ -52,9 +52,9 @@ matrix-nginx-error-pages/
 Auf dem Host, auf dem NPM läuft:
 
 ```bash
-mkdir -p /opt/npm/data/nginx/error_pages
+mkdir -p /srv/docker/npm/data/nginx/error_pages
 # dann alle HTML-Dateien aus error_pages/ dorthin kopieren
-cp error_pages/*.html /opt/npm/data/nginx/error_pages/
+cp error_pages/*.html /srv/docker/npm/data/nginx/error_pages/
 ```
 
 ### 2. Custom `server_proxy.conf` anlegen
@@ -62,8 +62,8 @@ cp error_pages/*.html /opt/npm/data/nginx/error_pages/
 Datei:
 
 ```bash
-mkdir -p /opt/npm/data/nginx/custom
-nano /opt/npm/data/nginx/custom/server_proxy.conf
+mkdir -p /srv/docker/npm/data/nginx/custom
+nano /srv/docker/npm/data/nginx/custom/server_proxy.conf
 ```
 
 Inhalt:
@@ -92,10 +92,10 @@ location = /_matrix_error_504.html { internal; alias /data/nginx/error_pages/mat
 
 ### 3. NPM neu laden
 
-Im Docker-Compose-Verzeichnis von NPM (z. B. `/opt/npm`):
+Im Docker-Compose-Verzeichnis von NPM (z. B. `/srv/docker/npm`):
 
 ```bash
-cd /opt/npm
+cd /srv/docker/npm
 docker compose restart app
 # oder:
 # docker compose exec app nginx -s reload
