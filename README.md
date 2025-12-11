@@ -40,10 +40,10 @@ matrix-nginx-error-pages/
 ## Beispiele
 
 ### 404‑Seite im Dark‑Mode
-![404 Dark Mode](pfad/zur/404-dark.gif)
+![404 Dark Mode](images/404-dark.gif)
 
 ### 404‑Seite im Light‑Mode
-![404 Light Mode](pfad/zur/404-light.gif)
+![404 Light Mode](images/404-light.gif)
 
 ## Integration in Nginx Proxy Manager
 
