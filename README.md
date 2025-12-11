@@ -52,9 +52,11 @@ matrix-nginx-error-pages/
 Auf dem Host, auf dem NPM läuft:
 
 ```bash
-mkdir -p /srv/docker/npm/data/nginx/error_pages
-# dann alle HTML-Dateien aus error_pages/ dorthin kopieren
-cp error_pages/*.html /srv/docker/npm/data/nginx/error_pages/
+mkdir -p /srv/docker/npm/data/nginx/error_pages # den Pfad bitte entsprechend anpassen
+cd /srv/docker/npm/data/nginx/error_pages # den Pfad bitte entsprechend anpassen
+wget https://github.com/noxxville/matrix-npm-error-pages/releases/latest/download/matrix-npm-error-pages.zip
+unzip matrix-npm-error-pages.zip
+rm matrix-npm-error-pages.zip
 ```
 
 ### 2. Custom `server_proxy.conf` anlegen
